@@ -34,8 +34,13 @@ export class ClienteService {
   };
 
   constructor(private localService: SessionStorageService) {
-    this.clientes = [this.cliente, this.cliente2, this.cliente3];
-    this.localService.setItem('clientes', this.clientes);
+    //si la lista de clientes no existe en el localstorage, la crea
+    if (!this.localService.getItem('clientes')) {
+      this.clientes = [this.cliente, this.cliente2, this.cliente3];
+      this.localService.setItem('clientes', this.clientes);
+    } else {
+      this.clientes = this.localService.getItem('clientes');
+    }
   }
 
   getClientes() {
