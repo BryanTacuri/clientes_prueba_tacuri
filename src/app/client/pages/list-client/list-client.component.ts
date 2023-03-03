@@ -48,6 +48,9 @@ export class ListClientComponent implements OnInit, OnDestroy {
         a.direccion.localeCompare(b.direccion),
       priority: 1,
     },
+    {
+      title: 'Acciones',
+    },
   ];
 
   constructor(
