@@ -95,42 +95,7 @@ nz-footer {
   nz-footer {
     text-align: center;
   }
-  /* 
-  nz-sider{
-    background: #EDF2F7;
+  
+  .item-menu{
+    display: flex; justify-content: flex-end; align-items: center; width: 100%; height: 100%; padding: 0 20px;
   }
-  
-  
-  ::ng-deep  .ant-layout-sider-children {
-    background-color: #EDF2F7;
-    height: 100%;
-    margin-top: -0.1px;
-    padding-top: 0.1px;
-  }
-  
-  
-  ::ng-deep menu-vertical-right, .ant-menu-root.ant-menu-inline {
-    background-color: #EDF2F7;
-    box-shadow: none;
-  }
-  
-  ::ng-deep menu-vertical-right, .ant-menu-root.ant-menu-inline[_ngcontent-foo-c48] {
-    background-color: #EDF2F7;
-    padding: 20%;
-  
-    box-shadow: none;
-  }
-  
-  ::ng-deep .ant-menu {
-    box-sizing: border-box;
-    font-variant: tabular-nums;
-    font-feature-settings: 'tnum', "tnum";
-    color: rgba(0,0,0,.85);
-    font-size: 14px;
-    line-height: 0;
-    background: #EDF2F7;
-    transition: background .3s,width .3s cubic-bezier(.2,0,0,1) 0s;
-  } */
-  
-  
-  

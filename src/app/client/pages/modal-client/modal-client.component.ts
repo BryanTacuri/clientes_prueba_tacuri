@@ -18,7 +18,7 @@ export class ModalClientComponent implements OnInit {
     id: [0],
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],
-    email: [''],
+    email: ['', Validators.required],
     telefono: [''],
     direccion: [''],
   });

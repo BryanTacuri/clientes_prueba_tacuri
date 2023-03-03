@@ -21,13 +21,17 @@
       <i *ngIf="this.valueService.isAuthenticated == true" class="trigger" nz-icon
         [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
       <!-- <br> -->
-      <ul nz-menu nzTheme="light" nzMode="horizontal">
-        <li *ngIf="this.valueService.isAuthenticated != true" nz-menu-item nzMatchRouter routerLink="/login">Login
-        </li>
 
-        <li *ngIf="this.valueService.isAuthenticated == true" nz-menu-item nzMatchRouter (click)="onLogout()">Cerrar
-          sesión</li>
-      </ul>
+      <div class="item-menu">
+
+        <ul nz-menu nzTheme="light" nzMode="horizontal">
+          <li *ngIf="this.valueService.isAuthenticated != true" nz-menu-item nzMatchRouter routerLink="/login">Login
+          </li>
+
+          <li *ngIf="this.valueService.isAuthenticated == true" nz-menu-item nzMatchRouter (click)="onLogout()">Cerrar
+            sesión</li>
+        </ul>
+      </div>
     </nz-header>
     <br>
     <nz-content>

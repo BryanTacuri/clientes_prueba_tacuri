@@ -36,11 +36,22 @@
 
 
 
+      <nz-form-item>
+
+        <nz-form-label [nzSpan]="7" nzFor="telefono">Telefono</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Por favor escriba una dirección">
+          <nz-input-group>
+            <input type="text" formControlName="telefono" nz-input placeholder="Telefono del cliente" />
+          </nz-input-group>
+
+        </nz-form-control>
+
+      </nz-form-item>
 
 
       <nz-form-item>
 
-        <nz-form-label [nzSpan]="7" nzRequired nzFor="direccion">Direccion</nz-form-label>
+        <nz-form-label [nzSpan]="7" nzFor="direccion">Direccion</nz-form-label>
         <nz-form-control [nzSpan]="12" nzErrorTip="Por favor escriba una dirección">
           <nz-input-group>
             <input type="text" formControlName="direccion" nz-input placeholder="Dirección del cliente" />
@@ -50,17 +61,6 @@
 
       </nz-form-item>
 
-      <nz-form-item>
-
-        <nz-form-label [nzSpan]="7" nzRequired nzFor="telefono">Telefono</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzErrorTip="Por favor escriba una dirección">
-          <nz-input-group>
-            <input type="text" formControlName="telefono" nz-input placeholder="Telefono del cliente" />
-          </nz-input-group>
-
-        </nz-form-control>
-
-      </nz-form-item>
 
 
 

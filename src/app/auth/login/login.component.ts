@@ -27,11 +27,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.validateFrm = this.fb.group({
-      email: [null, [Validators.required]],
+      usuario: [null, [Validators.required]],
       password: [null, [Validators.required]],
-    });
-    this.validateFrmRecuperar = this.fb.group({
-      email: [null, [Validators.required, Validators.email]],
     });
   }
   submitForm(): void {
@@ -49,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(formData: any): void {
     this.loading = true;
-    if (formData.email == 'admin' && formData.password == 'admin') {
+    if (formData.usuario == 'admin' && formData.password == 'admin') {
       this.loading = false;
       this.authService.setIsAuth(true);
 
