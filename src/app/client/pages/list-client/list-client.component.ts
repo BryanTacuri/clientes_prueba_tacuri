@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+
 import { Cliente } from 'src/app/models/Cliente';
-import { Pagination } from 'src/app/models/Pagination';
 import { MenuBarraService } from 'src/app/services/menuBarra.service';
 import { ClienteService } from 'src/app/client/cliente.service';
 
@@ -83,7 +81,13 @@ export class ListClientComponent implements OnInit, OnDestroy {
     }
   }
   getAllclientes() {
-    this.clientes = this.clienteService.getClientes();
+    this.loading = true;
+    //depsues de 1 segundo se muestra los clientes
+    setTimeout(() => {
+      this.clientes = this.clienteService.getClientes();
+      this.loading = false;
+    }, 1000);
+
     this.dataFound = ' ';
   }
 

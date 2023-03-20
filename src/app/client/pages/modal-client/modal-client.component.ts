@@ -18,7 +18,7 @@ export class ModalClientComponent implements OnInit {
     id: [0],
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],
-    email: ['', Validators.required, Validators.email],
+    email: ['', [Validators.required, Validators.email]],
     telefono: [''],
     direccion: [''],
   });
@@ -50,6 +50,7 @@ export class ModalClientComponent implements OnInit {
 
   handleOk() {
     if (!this.formCliente.valid) {
+      console.log('invalid', this.formCliente.value);
       Object.values(this.formCliente.controls).forEach((control) => {
         if (control.invalid) {
           control.markAsDirty();
