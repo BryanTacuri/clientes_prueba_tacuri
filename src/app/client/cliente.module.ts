@@ -6,8 +6,8 @@ import { NgZorroModule } from '../ngzorro/ngzorro.module';
 import { BarraModule } from '../components/barra/barra.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListClientComponent } from './pages/list-client/list-client.component';
-import { HomeClientComponent } from './pages/HomeClient/HomeClient.component';
 import { ModalClientComponent } from './pages/modal-client/modal-client.component';
+import { HomeClientComponent } from './pages/home-client/home-client.component';
 
 @NgModule({
   declarations: [

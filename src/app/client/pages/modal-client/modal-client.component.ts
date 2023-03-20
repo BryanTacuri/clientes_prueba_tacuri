@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { ClienteService } from '../../cliente.service';
 
@@ -14,11 +14,11 @@ export class ModalClientComponent implements OnInit {
   @Output() isVisibleChange = new EventEmitter<boolean>();
 
   title = 'Modal';
-  formCliente: any = this._formBuilder.group({
+  formCliente: FormGroup = this._formBuilder.group({
     id: [0],
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
     telefono: [''],
     direccion: [''],
   });
@@ -50,7 +50,12 @@ export class ModalClientComponent implements OnInit {
 
   handleOk() {
     if (!this.formCliente.valid) {
-      this.message.error('Debe llenar todos los campos');
+      Object.values(this.formCliente.controls).forEach((control) => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
       return;
     }
 
