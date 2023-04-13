@@ -6,21 +6,20 @@
 
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-submenu nzTitle="Clientes" nzIcon="container">
+      <li *ngFor="let item of menuItems" nz-submenu [nzTitle]="item.title" [nzIcon]="item.icon">
         <ul>
-          <li nz-menu-item nzMatchRouter nzMatchRouterExact routerLink="clientes/list">Listado</li>
-
+          <li *ngFor="let subItem of item.subItems" nz-menu-item nzMatchRouter nzMatchRouterExact
+            [routerLink]="subItem.routerLink">{{ subItem.title }}</li>
         </ul>
       </li>
-
     </ul>
+
   </nz-sider>
   <nz-layout>
     <nz-header>
 
       <i *ngIf="this.valueService.isAuthenticated == true" class="trigger" nz-icon
         [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
-      <!-- <br> -->
 
       <div class="item-menu">
 

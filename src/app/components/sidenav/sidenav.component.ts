@@ -11,8 +11,15 @@ export class SidenavComponent {
   title = 'Prueba';
   isCollapsed = false;
   offsetTop = 0;
+  menuItems: {
+    title: string;
+    icon: string;
+    subItems: { title: string; routerLink: string }[];
+  }[];
 
-  constructor(private router: Router, public valueService: AuthService) {}
+  constructor(private router: Router, public valueService: AuthService) {
+    this.getRoutes();
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -33,5 +40,15 @@ export class SidenavComponent {
 
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  getRoutes() {
+    this.menuItems = [
+      {
+        title: 'Clientes',
+        icon: 'container',
+        subItems: [{ title: 'Listado', routerLink: 'clientes/list' }],
+      },
+    ];
   }
 }
