@@ -8,12 +8,7 @@ const routes: Routes = [
     path: '',
     component: HomeClientComponent,
     children: [
-      { path: 'add', component: ListClientComponent },
       { path: 'list', component: ListClientComponent },
-      {
-        path: 'edit/:id',
-        component: ListClientComponent,
-      },
 
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ],

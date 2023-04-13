@@ -1,7 +1,7 @@
 <nz-spin [nzSpinning]="loading">
 
     <div class="container">
-        <div class="center">
+        <div class="center animate__animated animate__backInLeft">
 
             <img style="width: 14%; height: 10%; margin-top: 30px;" [src]="this.urlImageLogo " alt="">
 
@@ -9,7 +9,7 @@
         <br>
 
         <br>
-        <div class="center">
+        <div class="center animate__animated animate__backInRight">
             <form nz-form [formGroup]="validateFrm" class="login-form" (ngSubmit)="submitForm()">
 
                 <h1 clas="nameLogin">Login</h1>

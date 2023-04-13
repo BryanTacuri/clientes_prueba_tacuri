@@ -112,8 +112,11 @@ export class ListClientComponent implements OnInit, OnDestroy {
     this.isVisible = true;
   }
 
-  closeModal(): void {
+  closeModal(handleResponse: boolean): void {
+    if (handleResponse) {
+      this.getAllclientes();
+    }
+
     this.isVisible = false;
-    this.getAllclientes();
   }
 }

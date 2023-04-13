@@ -4,9 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [] },
   { path: 'login', component: LoginComponent, canActivate: [] },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+    canActivate: [AuthGuard],
+  },
 
   {
     path: '',
@@ -25,7 +31,7 @@ const routes: Routes = [
     ],
   },
 
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

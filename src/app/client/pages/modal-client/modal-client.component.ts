@@ -45,7 +45,7 @@ export class ModalClientComponent implements OnInit {
   handleCancel() {
     this.isVisible = false;
 
-    this.isVisibleChange.emit(this.isVisible);
+    this.isVisibleChange.emit(false);
   }
 
   handleOk() {
@@ -63,11 +63,11 @@ export class ModalClientComponent implements OnInit {
     if (this.formCliente.value.id > 0) {
       console.log('edit', this.formCliente.value);
       this.clienteService.putCliente(this.formCliente.value);
-      this.isVisibleChange.emit(this.isVisible);
+      this.isVisibleChange.emit(true);
     } else {
       console.log('add', this.formCliente.value);
       this.clienteService.postCliente(this.formCliente.value);
-      this.isVisibleChange.emit(this.isVisible);
+      this.isVisibleChange.emit(true);
     }
   }
 }

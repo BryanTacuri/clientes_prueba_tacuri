@@ -47,10 +47,11 @@ export class LoginComponent implements OnInit {
   onLogin(formData: any): void {
     this.loading = true;
     if (formData.usuario == 'admin' && formData.password == 'admin') {
-      this.loading = false;
       this.authService.setIsAuth(true);
-
-      this.router.navigate(['/home']);
+      setTimeout(() => {
+        this.loading = false;
+        this.router.navigate(['/home']);
+      }, 1200);
     } else {
       this.loading = false;
       this.message.error('Usuario o contraseña incorrectos');

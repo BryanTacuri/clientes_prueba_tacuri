@@ -47,7 +47,13 @@ export class SidenavComponent {
       {
         title: 'Clientes',
         icon: 'container',
-        subItems: [{ title: 'Listado', routerLink: 'clientes/list' }],
+        subItems: [
+          {
+            title: 'Home',
+            routerLink: '/home',
+          },
+          { title: 'Listado', routerLink: 'clientes/list' },
+        ],
       },
     ];
   }

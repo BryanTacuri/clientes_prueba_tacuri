@@ -17,6 +17,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { registerLocaleData } from '@angular/common';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { icons } from './models/Icons';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 registerLocaleData(es);
 
@@ -26,6 +27,7 @@ registerLocaleData(es);
     LoginComponent,
     FooterComponent,
     SidenavComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

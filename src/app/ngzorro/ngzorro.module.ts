@@ -65,6 +65,7 @@ const myModules = [
   NzToolTipModule,
   NzCollapseModule,
   NzAffixModule,
+  NzResultModule,
   NzSpinModule,
   NzUploadModule,
   NzMessageModule,

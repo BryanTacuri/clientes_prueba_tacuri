@@ -1,4 +1,4 @@
-<div class="site-page-header-ghost-wrapper">
+<div class="site-page-header-ghost-wrapper animate__animated animate__fadeIn">
   <nz-page-header [nzGhost]="false">
     <nz-page-header-title>Clientes</nz-page-header-title>
 
@@ -10,7 +10,7 @@
 <br>
 
 
-<nz-spin [nzSpinning]="loading">
+<nz-spin class="animate__animated animate__fadeIn" [nzSpinning]="loading">
   <nz-table #sortTable [nzData]="clientes" nzTableLayout="fixed">
     <thead>
       <tr>
@@ -45,4 +45,4 @@
 
 
 <app-modal-client *ngIf="isVisible" [cliente]="cliente" [isVisible]="isVisible"
-  (isVisibleChange)="closeModal()"></app-modal-client>
+  (isVisibleChange)="closeModal($event)"></app-modal-client>
